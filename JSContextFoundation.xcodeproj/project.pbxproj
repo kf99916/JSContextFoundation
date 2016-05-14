@@ -14,6 +14,7 @@
 		AA0394CC1CE635000085CFFC /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0394CB1CE635000085CFFC /* Global.swift */; };
 		AA0394CE1CE635050085CFFC /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0394CD1CE635050085CFFC /* Console.swift */; };
 		AA0394D01CE6350A0085CFFC /* JSInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0394CF1CE6350A0085CFFC /* JSInsert.swift */; };
+		AAC801C41CE6CB9500631186 /* MyClass.js in Resources */ = {isa = PBXBuildFile; fileRef = AAC801C31CE6CB9500631186 /* MyClass.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		AA0394CB1CE635000085CFFC /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		AA0394CD1CE635050085CFFC /* Console.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
 		AA0394CF1CE6350A0085CFFC /* JSInsert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSInsert.swift; sourceTree = "<group>"; };
+		AAC801C31CE6CB9500631186 /* MyClass.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = MyClass.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				AA0394BE1CE634C50085CFFC /* JSContextFoundationTests.swift */,
+				AAC801C31CE6CB9500631186 /* MyClass.js */,
 				AA0394C01CE634C50085CFFC /* Info.plist */,
 			);
 			path = JSContextFoundationTests;
@@ -196,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC801C41CE6CB9500631186 /* MyClass.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
