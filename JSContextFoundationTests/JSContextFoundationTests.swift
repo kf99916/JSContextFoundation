@@ -10,10 +10,15 @@ import XCTest
 @testable import JSContextFoundation
 
 class JSContextFoundationTests: XCTestCase {
+    var jsContext : JSContextFoundation?
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        jsContext = JSContextFoundation()
+        jsContext!.exceptionHandler = { context, exception in
+            XCTFail(exception.toString())
+        }
     }
     
     override func tearDown() {
@@ -21,9 +26,19 @@ class JSContextFoundationTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testVariablesAreDefined() {
+        jsContext!.evaluateScript("global")
+        jsContext!.evaluateScript("window")
+        jsContext!.evaluateScript("console")
+        jsContext!.evaluateScript("global.console")
+        jsContext!.evaluateScript("window.console")
+    }
+    
+    func testConsole() {
+        jsContext!.evaluateScript("console.log('test console.log');")
+        jsContext!.evaluateScript("console.info('test console.info');")
+        jsContext!.evaluateScript("console.warn('test console.warn');")
+        jsContext!.evaluateScript("console.error('test console.error');")
     }
     
     func testPerformanceExample() {

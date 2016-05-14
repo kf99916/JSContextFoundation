@@ -10,6 +10,10 @@
 		AA0394B31CE634C50085CFFC /* JSContextFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0394B21CE634C50085CFFC /* JSContextFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA0394BA1CE634C50085CFFC /* JSContextFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0394AF1CE634C50085CFFC /* JSContextFoundation.framework */; };
 		AA0394BF1CE634C50085CFFC /* JSContextFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0394BE1CE634C50085CFFC /* JSContextFoundationTests.swift */; };
+		AA0394CA1CE634F70085CFFC /* JSContextFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0394C91CE634F70085CFFC /* JSContextFoundation.swift */; };
+		AA0394CC1CE635000085CFFC /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0394CB1CE635000085CFFC /* Global.swift */; };
+		AA0394CE1CE635050085CFFC /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0394CD1CE635050085CFFC /* Console.swift */; };
+		AA0394D01CE6350A0085CFFC /* JSInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0394CF1CE6350A0085CFFC /* JSInsert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		AA0394B91CE634C50085CFFC /* JSContextFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSContextFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0394BE1CE634C50085CFFC /* JSContextFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSContextFoundationTests.swift; sourceTree = "<group>"; };
 		AA0394C01CE634C50085CFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0394C91CE634F70085CFFC /* JSContextFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSContextFoundation.swift; sourceTree = "<group>"; };
+		AA0394CB1CE635000085CFFC /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		AA0394CD1CE635050085CFFC /* Console.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
+		AA0394CF1CE6350A0085CFFC /* JSInsert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSInsert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				AA0394B21CE634C50085CFFC /* JSContextFoundation.h */,
+				AA0394C91CE634F70085CFFC /* JSContextFoundation.swift */,
+				AA0394CB1CE635000085CFFC /* Global.swift */,
+				AA0394CD1CE635050085CFFC /* Console.swift */,
+				AA0394CF1CE6350A0085CFFC /* JSInsert.swift */,
 				AA0394B41CE634C50085CFFC /* Info.plist */,
 			);
 			path = JSContextFoundation;
@@ -194,6 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0394CC1CE635000085CFFC /* Global.swift in Sources */,
+				AA0394D01CE6350A0085CFFC /* JSInsert.swift in Sources */,
+				AA0394CE1CE635050085CFFC /* Console.swift in Sources */,
+				AA0394CA1CE634F70085CFFC /* JSContextFoundation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -297,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -310,6 +326,7 @@
 		AA0394C41CE634C50085CFFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -320,12 +337,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Zheng-Xiang-Ke.JSContextFoundation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		AA0394C51CE634C50085CFFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -378,6 +397,7 @@
 				AA0394C51CE634C50085CFFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA0394C61CE634C50085CFFC /* Build configuration list for PBXNativeTarget "JSContextFoundationTests" */ = {
 			isa = XCConfigurationList;
@@ -386,6 +406,7 @@
 				AA0394C81CE634C50085CFFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
