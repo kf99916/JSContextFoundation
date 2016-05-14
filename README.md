@@ -29,7 +29,48 @@ import JSContextFoundation
 let jsContext = JSContextFoundation()
 ```
 
-All usage is the same as JSContext. See [JSContext in the Apple document](https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html) for details.
+### Import JavaScript Module
+To import JavaScript module, the source of module can be file path or URL: 
+#### File Path
+
+```swift
+let path = NSBundle(forClass: self.dynamicType).pathForResource("Module", ofType: "js")!
+do {
+  try jsContext.requireWithPath(path)
+} catch JSContextFoundationError.FileNotFound {
+  print(path + " is not found")
+} catch JSContextFoundationError.FileNotLoaded {
+  print(path + " cannot be loaded")
+} catch {
+  print("Unknow Exception")
+}
+
+// ...
+```
+
+#### URL
+
+```swift
+let url = NSURL(string: "https://FQDN/Module.js")!
+jsContext.requireWithUrl(url, completionHandler: {error in
+   if let error = error {
+      switch error {
+        case JSContextFoundationError.FileNotFound:
+            print(url.absoluteString + " is not found")
+        case JSContextFoundationError.FileNotDownloaded:
+            print(url.absoluteString + " is not downloaded")
+        default:
+            print("Unknown Error")
+        }
+        
+        return
+    }
+
+    //  ...
+})
+```
+
+All other usage is the same as JSContext. See [JSContext in the Apple document](https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html) for details.
 
 ## License
 JSContextFoundation is released under a MIT License. See LICENSE file for details.
