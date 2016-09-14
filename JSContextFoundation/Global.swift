@@ -13,8 +13,8 @@ import JavaScriptCore
 }
 
 @objc class Global : NSObject, GlobalJSExport, JSInsert {
-    func insert(jsContext: JSContext) {
-        jsContext.setObject(self, forKeyedSubscript:"global")
+    func insert(_ jsContext: JSContext) {
+        jsContext.setObject(self, forKeyedSubscript:"global" as (NSCopying & NSObjectProtocol)!)
         jsContext.evaluateScript("var window = global;")
     }
 }

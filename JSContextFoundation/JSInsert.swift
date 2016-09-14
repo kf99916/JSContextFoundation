@@ -10,5 +10,5 @@ import Foundation
 import JavaScriptCore
 
 @objc protocol JSInsert {
-    func insert(jsContext: JSContext)
+    func insert(_ jsContext: JSContext)
 }

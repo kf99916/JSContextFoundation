@@ -2,7 +2,7 @@
 
 import JSContextFoundation
 
-let jsContext = JSContextFoundation()
+let jsContext = JSContextFoundation()!
 
 jsContext.evaluateScript("console.log(1, 2, 3)")
 jsContext.evaluateScript("console.info(window)")

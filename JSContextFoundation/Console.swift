@@ -10,21 +10,21 @@ import Foundation
 import JavaScriptCore
 
 @objc enum ConsoleLevel : Int {
-    case LOG, INFO, WARN, ERROR
+    case log, info, warn, error
 }
 @objc protocol ConsoleJSExport : JSExport {
-    func output(level: ConsoleLevel, arguments: [AnyObject])
+    func output(_ level: ConsoleLevel, arguments: [AnyObject])
 }
 
 @objc class Console : NSObject, ConsoleJSExport, JSInsert {
     let levelDictionary : [ConsoleLevel : String] = [
-        .LOG: "",
-        .INFO: "[info]",
-        .WARN: "[WARN]",
-        .ERROR: "[ERROR]"
+        .log: "",
+        .info: "[info]",
+        .warn: "[WARN]",
+        .error: "[ERROR]"
     ]
     
-    func output(level: ConsoleLevel, arguments: [AnyObject]) {
+    func output(_ level: ConsoleLevel, arguments: [AnyObject]) {
         var levelOutput = levelDictionary[level]
         if levelOutput == nil {
             levelOutput = ""
@@ -40,8 +40,8 @@ import JavaScriptCore
         print("")
     }
     
-    func insert(jsContext: JSContext) {
-        jsContext.setObject(self, forKeyedSubscript:"$console")
+    func insert(_ jsContext: JSContext) {
+        jsContext.setObject(self, forKeyedSubscript:"$console" as (NSCopying & NSObjectProtocol)!)
         jsContext.evaluateScript(
             "var console = {" +
                 "log: function() { $console.outputArguments(0, arguments); }," +

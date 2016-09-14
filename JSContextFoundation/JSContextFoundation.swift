@@ -9,13 +9,13 @@
 import Foundation
 import JavaScriptCore
 
-public enum JSContextFoundationError: ErrorType {
-    case FileNotFound
-    case FileNotLoaded
-    case FileNotDownloaded
+public enum JSContextFoundationError: Error {
+    case fileNotFound
+    case fileNotLoaded
+    case fileNotDownloaded
 }
 
-public class JSContextFoundation : JSContext {
+open class JSContextFoundation : JSContext {
     public override init!(virtualMachine: JSVirtualMachine!) {
         super.init(virtualMachine: virtualMachine)
         
@@ -30,34 +30,34 @@ public class JSContextFoundation : JSContext {
         self.init(virtualMachine: JSVirtualMachine())
     }
     
-    public func requireWithPath(path: String) throws {
-        guard NSFileManager.defaultManager().fileExistsAtPath(path) else {
-            throw JSContextFoundationError.FileNotFound
+    open func requireWithPath(_ path: String) throws {
+        guard FileManager.default.fileExists(atPath: path) else {
+            throw JSContextFoundationError.fileNotFound
         }
-        guard let script = try? String(contentsOfFile: path, encoding: NSUTF8StringEncoding) else {
-            throw JSContextFoundationError.FileNotLoaded
+        guard let script = try? String(contentsOfFile: path, encoding: String.Encoding.utf8) else {
+            throw JSContextFoundationError.fileNotLoaded
         }
         
         evaluateScript(script)
     }
     
-    public func requireWithUrl(url: NSURL, completionHandler: (ErrorType?) -> Void) {
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) -> Void in
+    open func requireWithUrl(_ url: URL, completionHandler: @escaping (Error?) -> Void) {
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
             if let error = error {
                 completionHandler(error)
             }
             else {
-                guard let httpResponse = response as? NSHTTPURLResponse else {
-                    completionHandler(JSContextFoundationError.FileNotDownloaded)
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    completionHandler(JSContextFoundationError.fileNotDownloaded)
                     return
                 }
                 
                 switch httpResponse.statusCode {
                 case 404:
-                    completionHandler(JSContextFoundationError.FileNotFound)
+                    completionHandler(JSContextFoundationError.fileNotFound)
                 default:
-                    guard let data = data, let script = String(data: data, encoding: NSUTF8StringEncoding) as String? else {
-                        completionHandler(JSContextFoundationError.FileNotDownloaded)
+                    guard let data = data, let script = String(data: data, encoding: String.Encoding.utf8) as String? else {
+                        completionHandler(JSContextFoundationError.fileNotDownloaded)
                         return
                     }
                     
@@ -65,12 +65,12 @@ public class JSContextFoundation : JSContext {
                     completionHandler(nil)
                 }
             }
-        }
+        }) 
         
         task.resume()
     }
     
-    private func insert() {
+    fileprivate func insert() {
         let jsInsertArray: [JSInsert] = [Global(), Console()]
         for jsInsert in jsInsertArray {
             jsInsert.insert(self)

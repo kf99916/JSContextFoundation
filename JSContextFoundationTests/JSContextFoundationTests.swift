@@ -17,7 +17,7 @@ class JSContextFoundationTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         jsContext = JSContextFoundation()
         jsContext!.exceptionHandler = { context, exception in
-            XCTFail(exception.toString())
+            XCTFail((exception?.toString())!)
         }
     }
     
@@ -43,13 +43,13 @@ class JSContextFoundationTests: XCTestCase {
     }
     
     func testRequireWithPath() {
-        let path = NSBundle(forClass: self.dynamicType).pathForResource("MyClass", ofType: "js")!
+        let path = Bundle(for: type(of: self)).path(forResource: "MyClass", ofType: "js")!
         
         do {
             try jsContext!.requireWithPath(path)
-        } catch JSContextFoundationError.FileNotFound {
+        } catch JSContextFoundationError.fileNotFound {
             XCTFail(path + " is not found")
-        } catch JSContextFoundationError.FileNotLoaded {
+        } catch JSContextFoundationError.fileNotLoaded {
             XCTFail(path + " cannot be loaded")
         } catch {
             XCTFail("Unknow Exception")
@@ -67,15 +67,15 @@ class JSContextFoundationTests: XCTestCase {
             return
         }
         
-        let asyncExpectation = expectationWithDescription("asyncExpectation")
+        let asyncExpectation = expectation(description: "asyncExpectation")
         
-        jsContext!.requireWithUrl(url, completionHandler: {error in
+        jsContext!.requireWithUrl(url as URL, completionHandler: {error in
             if let error = error {
                 switch error {
-                case JSContextFoundationError.FileNotFound:
-                    XCTFail(url.absoluteString + " is not found")
-                case JSContextFoundationError.FileNotDownloaded:
-                    XCTFail(url.absoluteString + " is not downloaded")
+                case JSContextFoundationError.fileNotFound:
+                    XCTFail(url.absoluteString! + " is not found")
+                case JSContextFoundationError.fileNotDownloaded:
+                    XCTFail(url.absoluteString! + " is not downloaded")
                 default:
                     XCTFail("Unknown Error")
                 }
@@ -90,14 +90,14 @@ class JSContextFoundationTests: XCTestCase {
             asyncExpectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(5) { error in
+        waitForExpectations(timeout: 5) { error in
             XCTAssertNil(error, "Timeout")
         }
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
