@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = 'JSContextFoundation'
   s.module_name = 'JSContextFoundation'
-  s.version = '0.0.2'
+  s.version = '0.1'
   s.license = 'MIT'
   s.summary = 'JSContextFoundation is a Swift adapter for the JavaScriptCore Framework to build up the JavaScript runtime environment.'
   s.homepage = 'https://github.com/kf99916/JSContextFoundation'
