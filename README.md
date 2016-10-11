@@ -2,10 +2,17 @@
 JSContextFoundation is a Swift adapter for the JavaScriptCore Framework to build up the JavaScript runtime environment.
 
 ## Installation
-JSContextFoundation is available on [CocoaPods](http://cocoapods.org). Just add the following to your project Podfile:
+JSContextFoundation is available on [CocoaPods](http://cocoapods.org).
 
+To install JSContextFoundation for Swift 2.3 using CocoaPods, include the following in your Podfile
 ```ruby
-pod 'JSContextFoundation', '~> 0.0'
+pod 'JSContextFoundation', '~> 0.0.1'
+```
+
+
+To install JSContextFoundation for Swift 3 using CocoaPods, include the following in your Podfile
+```ruby
+pod 'JSContextFoundation', '~> 0.1'
 ```
 
 ## JavaScript Runtime Environment
