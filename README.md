@@ -1,7 +1,7 @@
 # JSContextFoundation
 JSContextFoundation is a Swift adapter for the JavaScriptCore Framework to build up the JavaScript runtime environment.
 
-[![GitHub release](https://img.shields.io/github/release/kf99916/JSContextFoundation.svg)](https://github.com/kf99916/JSContextFoundation)
+[![Language Swift 3.0](https://img.shields.io/badge/Language-Swift%203.0-orange.svg?style=flat)](https://swift.org)
 [![CocoaPods](https://img.shields.io/cocoapods/v/JSContextFoundation.svg)](#cocoapods)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![License](https://img.shields.io/github/license/kf99916/JSContextFoundation.svg)](LICENSE)
