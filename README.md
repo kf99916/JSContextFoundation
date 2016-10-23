@@ -1,6 +1,16 @@
 # JSContextFoundation
 JSContextFoundation is a Swift adapter for the JavaScriptCore Framework to build up the JavaScript runtime environment.
 
+[![GitHub release](https://img.shields.io/github/release/kf99916/JSContextFoundation.svg)](https://github.com/kf99916/JSContextFoundation)
+[![CocoaPods](https://img.shields.io/cocoapods/v/JSContextFoundation.svg)](#cocoapods)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+[![License](https://img.shields.io/github/license/kf99916/JSContextFoundation.svg)](LICENSE)
+
+## Requirements
+
+- iOS 8.0 or higher
+- Swift 2.3
+
 ## Installation
 
 - [CocoaPods](http://cocoapods.org/):
@@ -91,5 +101,10 @@ jsContext.requireWithUrl(url, completionHandler: {error in
 
 All other usage is the same as JSContext. See [JSContext in the Apple document](https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html) for details.
 
+## Author
+
+Zheng-Xiang Ke, kf99916@gmail.com
+
 ## License
-JSContextFoundation is released under a MIT License. See LICENSE file for details.
+JSContextFoundation is available under the MIT license. See the LICENSE file for more info.
+
