@@ -20,7 +20,7 @@ open class JSContextFoundation : JSContext {
         super.init(virtualMachine: virtualMachine)
         
         exceptionHandler = { context, exception in
-            print("[JSCotextFoundation][Exception] \(exception)")
+            print("[JSCotextFoundation][Exception] \(String(describing: exception))")
         }
         
         insert()
