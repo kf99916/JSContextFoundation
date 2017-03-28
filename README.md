@@ -1,7 +1,7 @@
 # JSContextFoundation
 JSContextFoundation is a Swift adapter for the JavaScriptCore Framework to build up the JavaScript runtime environment.
 
-[![Language Swift 3.0](https://img.shields.io/badge/Language-Swift%203.0-orange.svg?style=flat)](https://swift.org)
+[![Language Swift 3.1](https://img.shields.io/badge/Language-Swift%203.1-orange.svg?style=flat)](https://swift.org)
 [![CocoaPods](https://img.shields.io/cocoapods/v/JSContextFoundation.svg)](#cocoapods)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![License](https://img.shields.io/github/license/kf99916/JSContextFoundation.svg)](LICENSE)
@@ -9,7 +9,7 @@ JSContextFoundation is a Swift adapter for the JavaScriptCore Framework to build
 ## Requirements
 
 - iOS 8.0 or higher
-- Swift 2.3
+- Swift 2.3 or higher
 
 ## Installation
 
@@ -20,9 +20,9 @@ Swift 2.3
 pod 'JSContextFoundation', '~> 0.0.1'
 ```
 
-Swift 3
+Swift 3.1
 ```ruby
-pod 'JSContextFoundation', '~> 0.1'
+pod 'JSContextFoundation', '~> 0.1.1'
 ```
 
 - [Swift Package Manager](https://swift.org/package-manager/):
@@ -32,9 +32,9 @@ Swift 2.3
 .Package(url: "https://github.com/kf99916/JSContextFoundation.git", majorVersion: 0.0.1)
 ```
 
-Swift 3
+Swift 3.1
 ```
-.Package(url: "https://github.com/kf99916/JSContextFoundation.git", majorVersion: 0.1)
+.Package(url: "https://github.com/kf99916/JSContextFoundation.git", majorVersion: 0.1.1)
 ```
 
 ## JavaScript Runtime Environment
