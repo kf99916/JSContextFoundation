@@ -101,6 +101,16 @@ jsContext.requireWithUrl(url, completionHandler: {error in
 
 All other usage is the same as JSContext. See [JSContext in the Apple document](https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html) for details.
 
+## Apps using JSContextFoundation
+
+If you are using JSContextFoundation in your app and want to be listed here, simply create a pull request.
+
+I am always curious who is using my projects :)
+
+[Hikingbook](https://itunes.apple.com/app/id1067838748) - by Zheng-Xiang Ke
+
+![Hikingbook](apps/Hikingbook.png)
+
 ## Author
 
 Zheng-Xiang Ke, kf99916@gmail.com
