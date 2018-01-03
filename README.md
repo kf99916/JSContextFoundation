@@ -1,10 +1,12 @@
 # JSContextFoundation
 JSContextFoundation is a Swift adapter for the JavaScriptCore Framework to build up the JavaScript runtime environment.
 
-[![Language Swift 3.1](https://img.shields.io/badge/Language-Swift%203.1-orange.svg?style=flat)](https://swift.org)
-[![CocoaPods](https://img.shields.io/cocoapods/v/JSContextFoundation.svg)](#cocoapods)
-[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![License](https://img.shields.io/github/license/kf99916/JSContextFoundation.svg)](LICENSE)
+[![CocoaPods](https://img.shields.io/cocoapods/dt/JSContextFoundation.svg)](https://cocoapods.org/pods/JSContextFoundation)
+[![GitHub stars](https://img.shields.io/github/stars/kf99916/JSContextFoundation.svg)](https://github.com/kf99916/JSContextFoundation/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/kf99916/JSContextFoundation.svg)](https://github.com/kf99916/JSContextFoundation/network)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/JSContextFoundation.svg)](https://cocoapods.org/pods/JSContextFoundation)
+[![Platform](https://img.shields.io/cocoapods/p/JSContextFoundation.svg)](https://github.com/kf99916/JSContextFoundation)
+[![GitHub license](https://img.shields.io/github/license/kf99916/JSContextFoundation.svg)](https://github.com/kf99916/JSContextFoundation/blob/master/LICENSE)
 
 ## Requirements
 
